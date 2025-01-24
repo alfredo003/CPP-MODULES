@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 {
 
     if(argc == 1)
-        std::cout << "* Erro";
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
     else
     {
         int i = 1;
