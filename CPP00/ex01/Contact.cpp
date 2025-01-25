@@ -26,7 +26,8 @@ void Contact:: displayFull() const
         std::cout << "Darkest Secret: " << darkest_secret << std::endl;
 }
 
-std::string Contact::truncate(const std::string &str) {
+std::string Contact::truncate(const std::string &str)
+{
     if (str.length() > 10)
         return str.substr(0, 9) + ".";
     return str;
