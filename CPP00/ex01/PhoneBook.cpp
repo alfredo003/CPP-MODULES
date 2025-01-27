@@ -42,10 +42,11 @@ void PhoneBook::searchContacts() const
               << std::setw(10) << "First Name" << "|"
               << std::setw(10) << "Last Name" << "|"
               << std::setw(10) << "Nickname" << "|" << std::endl;
-
-    for (int i = 0; i < total_contacts; i++)
+    int i = 0; 
+    while (i < total_contacts)
     {
         contacts[i].displaySummary(i);
+        i++;
     }
 
     std::cout << "Enter the index of the contact to view details: ";
@@ -58,8 +59,7 @@ void PhoneBook::searchContacts() const
         std::cin.ignore();
         return;
     }else{
-            std::cin.ignore();
-
+        std::cin.ignore();
         if (index < 0 || index >= total_contacts)
             std::cout << "Invalid index!" << std::endl;
         else

@@ -8,9 +8,9 @@ int Account::_totalAmount= 0;
 int Account::_totalNbDeposits= 0;
 int Account::_totalNbWithdrawals = 0;
 
-void Account::_displayTimestamp(){
+void Account::_displayTimestamp()
+{
     std::time_t result = std::time(NULL);
-
     std::cout << std::setfill('0') <<"[" << 1900 + std::localtime(&result)->tm_year
                 << std::setw(2) << 1 + std::localtime(&result)->tm_mon
                 <<  std::setw(2) << std::localtime(&result)->tm_mday
@@ -21,7 +21,8 @@ void Account::_displayTimestamp(){
                 << "] " << std::flush;
 }
 
-Account::Account(int initial_deposit) {
+Account::Account(int initial_deposit)
+{
     _nbAccounts++;
     _accountIndex = _nbAccounts - 1;
     _amount = initial_deposit;
@@ -34,7 +35,8 @@ Account::Account(int initial_deposit) {
               << "created" << std::endl;
 }
 
-Account::~Account( void ) {
+Account::~Account( void )
+{
     _nbAccounts--;
     this->_displayTimestamp();
     std::cout << "index:" << _accountIndex << ";"
@@ -42,7 +44,7 @@ Account::~Account( void ) {
                 << "closed" << std::endl;
 }
 
-// Accessing class private infos
+
 int Account::getNbAccounts( void ) {
     return _nbAccounts;
 }
