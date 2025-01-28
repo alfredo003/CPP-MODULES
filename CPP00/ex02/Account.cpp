@@ -44,24 +44,16 @@ Account::~Account( void )
                 << "closed" << std::endl;
 }
 
+int Account::getNbAccounts( void ) {return _nbAccounts;}
 
-int Account::getNbAccounts( void ) {
-    return _nbAccounts;
-}
+int Account::getTotalAmount( void ) {return _totalAmount;}
 
-int Account::getTotalAmount( void ) {
-    return _totalAmount;
-}
+int Account::getNbDeposits( void ) {return _totalNbDeposits;}
 
-int Account::getNbDeposits( void ) {
-    return _totalNbDeposits;
-}
+int Account::getNbWithdrawals( void ) { return _totalNbWithdrawals;}
 
-int Account::getNbWithdrawals( void ) {
-    return _totalNbWithdrawals;
-}
-
-void    Account::displayAccountsInfos( void ) {
+void    Account::displayAccountsInfos( void )
+{
     _displayTimestamp();
     std::cout << "accounts:" << getNbAccounts() << ";"
                 << "total:" << getTotalAmount() << ";"
@@ -69,8 +61,8 @@ void    Account::displayAccountsInfos( void ) {
                 << "withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
-// Accessing account detail private info
-void    Account::makeDeposit( int deposit ) {
+void    Account::makeDeposit( int deposit )
+{
     this->_displayTimestamp();
     _nbDeposits++;
     _totalNbDeposits++;
@@ -83,7 +75,8 @@ void    Account::makeDeposit( int deposit ) {
                 << "nb_deposit:" << _nbDeposits << std::endl;
 }
 
-bool    Account::makeWithdrawal(int withdrawal ) {
+bool    Account::makeWithdrawal(int withdrawal )
+{
     this->_displayTimestamp();
     std::cout << "index:" << _accountIndex << ";"
                 << "p_amount:" << _amount << ";"
@@ -102,11 +95,10 @@ bool    Account::makeWithdrawal(int withdrawal ) {
     return true;
 }
 
-int     Account::checkAmount( void ) const {
-    return _amount;
-}
+int     Account::checkAmount( void ) const { return _amount;}
 
-void    Account::displayStatus( void ) const {
+void    Account::displayStatus( void ) const 
+{
     this->_displayTimestamp();
     std::cout << "index:" << _accountIndex << ";"
                 << "amount:" << _amount << ";"
