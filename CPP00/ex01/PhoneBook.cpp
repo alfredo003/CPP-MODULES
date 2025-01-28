@@ -2,6 +2,24 @@
 
 PhoneBook::PhoneBook() : next_index(0), total_contacts(0) {}
 
+bool startsWithCapital(const std::string& str)
+{
+    if (str.empty()) return false;
+    return std::isupper(static_cast<unsigned char>(str[0]));
+}
+
+bool isOnlyDigits(const std::string& str)
+{
+    for (char c : str)
+    {
+        if (!std::isdigit(static_cast<unsigned char>(c)))
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 void PhoneBook::addContact()
 {
     std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
@@ -20,6 +38,20 @@ void PhoneBook::addContact()
     if (firstName.empty() || lastName.empty() || nickname.empty() || phoneNumber.empty() || darkestSecret.empty())
     {
         std::cout << "All fields must be filled!" << std::endl;
+        return;
+    }
+
+    if (!startsWithCapital(firstName)) {
+        std::cout << "First name must start with a capital letter!" << std::endl;
+        return;
+    }
+    if (!startsWithCapital(lastName)) {
+        std::cout << "Last name must start with a capital letter!" << std::endl;
+        return;
+    }
+
+    if (!isOnlyDigits(phoneNumber)) {
+        std::cout << "Phone number must contain only digits!" << std::endl;
         return;
     }
 
