@@ -31,6 +31,9 @@ $(NAME): $(OBJ)
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 	@clear
 	@echo $(GREEN)"- Executable ready."$(RESET)
+	
+%.o: %.cpp
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJ)
