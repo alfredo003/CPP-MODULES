@@ -13,7 +13,7 @@
 NAME	= PhoneBook
 
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror
 RM		= rm -rf
 
 GREEN		= "\e[92;5;118m"

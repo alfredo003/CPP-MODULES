@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: achivela <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/03 16:57:55 by achivela          #+#    #+#             */
+/*   Updated: 2025/02/03 16:58:01 by achivela         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() : next_index(0), total_contacts(0) {}
@@ -37,7 +48,7 @@ void PhoneBook::addContact()
 
     if (firstName.empty() || lastName.empty() || nickname.empty() || phoneNumber.empty() || darkestSecret.empty())
     {
-        std::cout << "All fields must be filled!" << std::endl;
+        std::cout << "\e[93;3;226mAll fields must be filled!\e[0m" << std::endl;
         return;
     }
 

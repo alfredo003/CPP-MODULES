@@ -17,7 +17,7 @@ FLAGS	= -Wall -Wextra -Werror
 RM		= rm -rf
 
 GREEN		= "\e[92;5;118m"
-YELLOW		= "\e[93;5;226m"
+YELLOW		= "\e[93;226m"
 RESET		= "\e[0m"
 
 SRC = megaphone.cpp

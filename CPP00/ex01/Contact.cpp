@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: achivela <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/03 16:58:31 by achivela          #+#    #+#             */
+/*   Updated: 2025/02/03 16:58:33 by achivela         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "Contact.hpp"
 
 void Contact::setContact(const std::string &firstName,const std::string &lastName,const std::string &nickName,const std::string &phoneNumber,const std::string &darkestSecret)
