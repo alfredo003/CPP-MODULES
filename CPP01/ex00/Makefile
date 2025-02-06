@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= megaphone
+NAME	= brainzz
 
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror
@@ -20,7 +20,10 @@ GREEN		= "\e[92;5;118m"
 YELLOW		= "\e[93;226m"
 RESET		= "\e[0m"
 
-SRC = megaphone.cpp
+SRC = main.cpp \
+	Zombie.cpp \
+	randomChump.cpp \
+	newZombie.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
