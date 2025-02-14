@@ -1,22 +1,17 @@
 #include "Zombie.hpp"
 
-int	main(void)
+int		main(void)
 {
-	std::cout << "Stack-Zombies" << std::endl;
-	Zombie	zombie1("Zombie1");
-	Zombie	zombie2("Zombie2");
+	std::cout << "Zombie" << std::endl;
+	Zombie  zombyFather = Zombie("zombyFather");
+	std::cout << "----------------------" << std::endl;
+	std::cout << "newZombie" << std::endl;
+	Zombie  *zomb1 = newZombie("Zombie 1");
+	delete zomb1;
+	Zombie  *zomb2 = newZombie("Zombie 2");
+	delete zomb2;
+	std::cout << "----------------------" << std::endl;
 
-	zombie1.announce();
-	zombie2.announce();
-	randomChump("randomChumpZ");
-
-	std::cout << std::endl;
-	std::cout << "Heap-Zombies" << std::endl;
-	Zombie	*heapZ;
-
-	heapZ = newZombie("HeapZ");
-	heapZ->announce();
-	delete(heapZ);
-
-	return (0);
+	std::cout << "RandomChump" << std::endl;
+	randomChump("randomZomb");
 }

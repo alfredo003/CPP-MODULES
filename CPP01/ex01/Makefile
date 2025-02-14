@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= brainzz
+NAME	= moar_brainzz
 
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror
