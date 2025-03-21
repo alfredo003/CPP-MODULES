@@ -1,12 +1,14 @@
 #include "Harl.hpp"
 
-int main(int ac, char **av)
+int main(int argc, char **argv)
 {
-	if (ac != 2)
+	if (argc != 2)
+	{
+		std::cout << "Usage: ./harlFilter <level>" << std::endl;
 		return 1;
+	}
 
 	Harl Harl;
-
-	Harl.filtered_complain(av[1]);
+	Harl.filtered_complain(argv[1]);
 	return 0;
 }

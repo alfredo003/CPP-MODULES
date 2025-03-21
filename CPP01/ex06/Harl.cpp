@@ -1,62 +1,23 @@
 #include "Harl.hpp"
 
-Harl::Harl()
-{
-	std::cout << "Harl constructor called"<< std::endl;
-}
-
-Harl::~Harl()
-{
-	std::cout << "Harl descructor called"<< std::endl;
-}
-
-void Harl::complain(std::string level)
-{
-	void (Harl::*PComplain[4])() = {
-		&Harl::debug,
-		&Harl::info, 
-		&Harl::warning, 
-		&Harl::error
-	};
-
-	std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
-	int  i = -1;
-	while(i++ < 4)
-	{
-		if(level == levels[i])
-		{
-			(this->*PComplain[i])();
-			break;
-		}
-	}
-}
-
 void Harl::filtered_complain(std::string level)
 {
 	std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 
 	int i = -1;
 	while (++i < 4)
-		if (levels[i].compare(level) == 0)
-			break ;
-
-	switch (i) {	
-		case 0:
-			this->debug();
-			break ;
-		case 1:
-			this->info();
-			break ;
-		case 2:
-			this->warning();
-			break ;
-		case 3:
-			this->error();
-			break ;
-		default: 
-			 std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-			 break ;
-	}
+    {
+        if (levels[i] == level)
+            break;
+    }
+	  if (i < 4) {
+		if (i <= 0) this->debug();
+		if (i <= 1) this->info();
+		if (i <= 2) this->warning();
+		if (i <= 3) this->error();
+    } else {
+        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+    }
 
 }
 

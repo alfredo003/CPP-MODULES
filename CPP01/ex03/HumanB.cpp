@@ -1,6 +1,6 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name) : Weapon(nullptr), name(name)
+HumanB::HumanB(std::string name) : weapon(NULL), name(name)
 {
 	std::cout << "Default HumanB constructor called" << std::endl;
 }
@@ -10,16 +10,16 @@ HumanB::~HumanB()
 	std::cout << "HumanB destructor called" << std::endl;
 }
 
-void HumanB::setWeapon(class Weapon &Weapon)
+void HumanB::setWeapon(Weapon &weapon)
 {
-	this->Weapon = &Weapon;
+	this->weapon = &weapon;
 }
 
 void HumanB::attack(void)
 {
-	if (!this->Weapon)
+	if (!this->weapon)
 		std::cout << "NO WEAPON";
 	else
-		std::cout << this->name << " attacked with " << this->Weapon->getType() << std::endl;
+		std::cout << this->name << " attacked with " << this->weapon->getType() << std::endl;
 	return ;
 }

@@ -1,15 +1,5 @@
 #include "Harl.hpp"
 
-Harl::Harl()
-{
-	std::cout << "Harl constructor called"<< std::endl;
-}
-
-Harl::~Harl()
-{
-	std::cout << "Harl descructor called"<< std::endl;
-}
-
 void Harl::complain(std::string level)
 {
 	void (Harl::*PComplain[4])() = {

@@ -1,5 +1,5 @@
 
-NAME	= Harl2.0
+NAME	= harl
 
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror
