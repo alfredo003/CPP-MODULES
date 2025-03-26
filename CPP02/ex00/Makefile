@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= brainzz
+NAME	= orthodox_Canonical_form
 
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror
@@ -21,9 +21,8 @@ YELLOW		= "\e[93;226m"
 RESET		= "\e[0m"
 
 SRC = main.cpp \
-	Zombie.cpp \
-	randomChump.cpp \
-	newZombie.cpp
+	Fixed.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
