@@ -1,37 +1,37 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(): _value(0)
+Fixed::Fixed():nbr_fixed(0)
 {
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &copy)
+Fixed::Fixed(const Fixed &fixed)
 {
-	*this =copy;
-    	std::cout << "Copy constructor called" << std::endl;
+    *this = fixed;
+    std::cout << "Copy constructor called" << std::endl;
 }
 
-Fixed &Fixed::operator=(const Fixed &copy)
-{
-	if (this != &copy)
-		this->_value = copy.getRawBits();
-	std::cout << "Copy assignment operator called" << std::endl;
-	return *this;
+Fixed& Fixed::operator=(const Fixed& fixed)
+{ 
+    std::cout << "Copy assignment operator called" << std::endl;
+    if (this != &fixed)
+        nbr_fixed = fixed.getRawBits();
+    return *this;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" <<  std::endl;
+     std::cout << "Destructor called" << std::endl;
 }
 
-int	Fixed::getRawBits( void ) const
+int Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
-	return (this->_value);
+    std::cout << "getRawBits member function called" << std::endl;
+    return this->nbr_fixed;
 }
 
 void Fixed::setRawBits( int const raw )
 {
-	std::cout << "setRawBits member function called" << std::endl;
-	this->_value = raw;
+    std::cout << " setRawBits member function called" << std::endl;
+    this->nbr_fixed = raw;
 }
