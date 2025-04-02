@@ -3,19 +3,23 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror
 SRCS = main.cpp\
 		Fixed.cpp
-OBJS = $(SRCS:.cpp = .o)
+
+OBJS = $(SRCS:.cpp=.o)
+RM = rm -rf
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
 %.o:%.cpp
 	$(CC) -c $< -o $@
 
 clean:
-		$(RM) $(OBJS)
+	@$(RM) $(OBJS)
+
 
 fclean: clean
-		$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
