@@ -1,8 +1,8 @@
-NAME = orthodox_canonical
+NAME = a.out
 CC = c++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp\
-		Fixed.cpp
+	Fixed.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 RM = rm -rf
@@ -10,7 +10,7 @@ RM = rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o:%.cpp
 	$(CC) -c $< -o $@

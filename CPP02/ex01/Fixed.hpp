@@ -9,14 +9,14 @@ private:
     int nbr_fixed;
     const int nbr_fra_bits = 8;
 public:
-    //ex00
+
     Fixed();
     Fixed(const Fixed&fixed);
     Fixed&operator=(const Fixed&fixed);
     int getRawBits( void ) const;
     void setRawBits( int const raw );
     ~Fixed();
-    //ex01
+
     Fixed(const int nbr);
     Fixed(const float nbr_float);
     float toFloat(void) const;
