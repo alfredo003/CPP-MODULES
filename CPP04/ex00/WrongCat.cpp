@@ -29,8 +29,7 @@ WrongCat	&WrongCat::operator=( WrongCat const &copy )
 	return (*this);
 }
 
-
 void	WrongCat::makeSound(void) const
 {
-		std::cout << "miau miau miau" << std::endl;
+		std::cout << "miau.. miau.. miau.." << std::endl;
 }

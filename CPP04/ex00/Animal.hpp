@@ -2,7 +2,7 @@
 # define ANIMAL_HPP
 
 # include <iostream>
-
+ 
 class Animal {
 
 protected:

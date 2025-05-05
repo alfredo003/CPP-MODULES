@@ -6,51 +6,48 @@
 int main() 
 {
 	{
-		std::cout << "[TEST] Creating Dog and Cat with Animal*..." << std::endl;
-		const Animal* dogPtr = new Dog();
-		std::cout << std::endl;
-
-		const Animal* catPtr = new Cat();
-		std::cout << std::endl;
-
-		std::cout << "[TEST] Deleting Dog and Cat (checking for leaks)..." << std::endl;
-		delete dogPtr;
-		std::cout << std::endl;
-		delete catPtr;
-		std::cout << std::endl;
+		std::cout << "[\033[31m TEST CREATING DOG AND CAT  \033[0m] " << std::endl;
+		const Animal* dog = new Dog();
+			std::cout << "\033[31m ----------------------- \033[0m " << std::endl;
+		const Animal* cat = new Cat();
+		
+		std::cout << "[\033[31m DELETING DOG AND CAT  \033[0m] " << std::endl;
+		delete dog;
+			std::cout << "\033[31m ----------------------- \033[0m " << std::endl;
+		delete cat;
 	}
 
 	{
-		const Animal* animalArray[20];
+		const Animal* animalArray[10];
 
-		std::cout << "[TEST] Creating 10 Dogs..." << std::endl;
-		for (int i = 0; i < 10; i++) {
+		std::cout << "[\033[31m TEST CREATING 5 DOG  \033[0m] " << std::endl;
+		for (int i = 0; i < 5; i++) {
 			animalArray[i] = new Dog();
 			std::cout << std::endl;
 		}
 
-		std::cout << "[TEST] Creating 10 Cats..." << std::endl;
-		for (int i = 10; i < 20; i++) {
+		std::cout << "[\033[31m TEST CREATING 5 CAT  \033[0m] " << std::endl;
+		for (int i = 5; i < 10; i++) {
 			animalArray[i] = new Cat();
 			std::cout << std::endl;
 		}
 
-		std::cout << "[TEST] Deleting all Animals (Dogs and Cats)..." << std::endl;
-		for (int i = 0; i < 20; i++) {
+		std::cout << "[\033[31m DELETING ALL ANIMALS \033[0m] " << std::endl;
+		for (int i = 0; i < 10; i++) {
 			delete animalArray[i];
 			std::cout << std::endl;
 		}
 	}
 
-	{
-		std::cout << "[TEST] Creating Dog 'basic'..." << std::endl;
+	{	
+		std::cout << "[\033[31m TEST CREATING DOG BASIC \033[0m] " << std::endl;
 		Dog basic;
 
-		std::cout << "[TEST] Copying Dog 'basic' into 'tmp'..." << std::endl;
+		std::cout << "[\033[31m COPYING DOG BASIC INTO TMP \033[0m] " << std::endl;
 		{
 			Dog tmp = basic;
 		}
-		std::cout << "[TEST] 'tmp' is now out of scope and destroyed." << std::endl;
+
 	}
 
 	return 0;

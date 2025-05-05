@@ -5,7 +5,7 @@
 
 class Animal {
 
-protected:
+protected: 
 	std::string	type;
 public:
 	Animal();

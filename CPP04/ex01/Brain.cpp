@@ -1,7 +1,7 @@
 #include "Brain.hpp"
 
 Brain::Brain()
-{ 
+{  
     std::cout << "Brain Default constructor called" << std::endl;
 }
 

@@ -4,6 +4,7 @@ Cat::Cat() : Animal("Cat")
 {
 	std::cout << "Cat Default constructor called" << std::endl;
 }
+
 Cat::Cat::~Cat()
 {
 	std::cout << "Cat desctructor called" << std::endl;
@@ -26,5 +27,5 @@ Cat &Cat::operator=(Cat const &copy)
 	
 void	Cat::makeSound(void) const
 {
-	std::cout << "miau miau miau" << std::endl;
+	std::cout << "miau... miau.. miau..." << std::endl;
 }

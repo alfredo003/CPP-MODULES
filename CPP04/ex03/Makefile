@@ -1,16 +1,15 @@
-NAME = Animal
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+NAME = a.out
 CC = c++
-RM = rm -rf
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp \
-	Animal.cpp \
-	Cat.cpp \
-	Dog.cpp \
-	WrongAnimal.cpp\
-	WrongCat.cpp \
-	Brain.cpp
+	  AMateria.cpp \
+	  Character.cpp \
+	  Cure.cpp \
+	  Ice.cpp \
+	  MateriaSource.cpp
 
 OBJS = $(SRCS:.cpp=.o)
+RM = rm -rf
 
 all: $(NAME)
 
@@ -21,7 +20,7 @@ $(NAME): $(OBJS)
 %.o:%.cpp
 	$(CC) -c $< -o $@
 
-clean: 
+clean:
 	$(RM) $(OBJS)
 	@clear
 
