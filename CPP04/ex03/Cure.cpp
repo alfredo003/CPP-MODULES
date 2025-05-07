@@ -17,12 +17,12 @@ Cure::~Cure()
 
 Cure &Cure::operator=(const Cure &copy) 
 {
+	std::cout << "Cure copy Assginment called" << std::endl;
 	if (this != &copy)
 	{
 		type = copy.type;
 	}
 	return (*this);
-	std::cout << "Cure copy Assginment called" << std::endl;
 }
 
 Cure* Cure::clone() const

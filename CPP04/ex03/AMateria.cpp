@@ -3,7 +3,7 @@
 AMateria::AMateria() : type("")
 {
 	std::cout << "AMateria Default constructor called" << std::endl;
-}
+} 
  
 AMateria::~AMateria()
 {
@@ -22,12 +22,21 @@ AMateria::AMateria(const AMateria &copy) : type(copy.type)
 
 AMateria &AMateria::operator=(const AMateria &copy)
 {
-	if (this != &copy)ICharacter
+	if (this != &copy)
+	{
+		type = copy.type;
+	}
+	return (*this);
 }
 
 void	AMateria::setType(std::string type)
 {
 	this->type = type;
+}
+
+std::string const& AMateria::getType() const
+{
+	return (this->type);
 }
  
 void AMateria::use(ICharacter& target)

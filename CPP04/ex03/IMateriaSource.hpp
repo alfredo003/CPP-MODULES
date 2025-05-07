@@ -5,7 +5,7 @@
 #include "AMateria.hpp"
 
 class IMateriaSource {
-
+ 
 	public:
 			virtual ~IMateriaSource() {}
 			virtual void learnMateria(AMateria*) = 0;

@@ -1,12 +1,7 @@
 NAME = a.out
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp \
-	  AMateria.cpp \
-	  Character.cpp \
-	  Cure.cpp \
-	  Ice.cpp \
-	  MateriaSource.cpp
+SRCS = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 RM = rm -rf

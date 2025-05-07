@@ -7,7 +7,7 @@
 
 class MateriaSource : public IMateriaSource{
 
-	protected:
+	protected: 
 		AMateria *materias[4];
 		int _nbrMateria;
 	public:
