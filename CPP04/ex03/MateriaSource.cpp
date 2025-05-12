@@ -2,7 +2,7 @@
 
 MateriaSource::MateriaSource()
 {
-	_nbrMateria = 0;
+	num_materia = 0;
 	for (int i = 0; i < 4; ++i)
 	{
 		materias[i] = nullptr;
@@ -20,7 +20,7 @@ MateriaSource::~MateriaSource()
 	std::cout << "MateriaSource destructor called" << std::endl;
 }
 
-MateriaSource::MateriaSource(const MateriaSource &copy) : _nbrMateria(copy._nbrMateria)
+MateriaSource::MateriaSource(const MateriaSource &copy) : num_materia(copy.num_materia)
 {
 	 for (int i = 0; i < 4; ++i)
         materias[i] = copy.materias[i]->clone();
@@ -29,7 +29,7 @@ MateriaSource::MateriaSource(const MateriaSource &copy) : _nbrMateria(copy._nbrM
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
 {
-	_nbrMateria = copy._nbrMateria;
+	num_materia = copy.num_materia;
 	if (this != &copy)
 	{
 		for (int i = 0; i < 4; ++i)
@@ -53,34 +53,25 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
 
 void MateriaSource::learnMateria(AMateria* materia)
 {
-	if (_nbrMateria < 4)
+	if (num_materia < 4)
 	{
-		materias[_nbrMateria] = materia;
-		_nbrMateria++;
+		materias[num_materia] = materia;
+		num_materia++;
 	}
 	else
-		std::cout << "MateriaSource is full" << std::endl;
+	{
+		std::cout << "\033[31m MateriaSource is full \033[0m" << std::endl;
+		 delete materia;
+	}
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
 
-	for (int i = 0; i < _nbrMateria; ++i)
+	for (int i = 0; i < num_materia; ++i)
 	{
 		if (materias[i] && materias[i]->getType() == type)
 			return (materias[i]->clone());
 	}
 	return (0);
-}
-
-void	MateriaSource::print()
-{
-	std::cout << "MateriaSource has " << _nbrMateria << " materia" << std::endl;
-	for (int i = 0; i < _nbrMateria ; ++i)
-	{
-		if (materias[i])
-			std::cout << "Materia " << i << " : " << materias[i]->getType() << std::endl;
-		else
-			std::cout << "Materia " << i << " : NULL" << std::endl;
-	}
 }

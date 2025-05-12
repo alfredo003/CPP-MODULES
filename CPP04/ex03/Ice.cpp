@@ -10,12 +10,12 @@ Ice::~Ice()
 	std::cout << "Ice desctructor called" << std::endl;
 }
 
-Ice::Ice(Ice &copy) : AMateria(copy)
+Ice::Ice(const Ice &copy) : AMateria(copy)
 {
 	std::cout << "Ice copy constructor called" << std::endl;
 }
 
-Ice &Ice::operator=(Ice &copy)
+Ice &Ice::operator=(const Ice &copy)
 {
 	if (this != &copy)
 	{
@@ -26,7 +26,7 @@ Ice &Ice::operator=(Ice &copy)
 
 Ice* Ice::clone() const
 {
-	return (new Ice());
+	return (new Ice(*this));
 }
 
 void Ice::use(ICharacter& target)

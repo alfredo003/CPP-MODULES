@@ -6,9 +6,9 @@
 
 class Character : public ICharacter {
 	protected:
-		AMateria *materias[4];
-		std::string _name;
-		int _nbrMateria;
+		AMateria *inventory[4];
+		std::string name;
+		int num_inventory;
 	public:
 		Character();
 		Character(const std::string name);
@@ -23,7 +23,6 @@ class Character : public ICharacter {
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
-		void printMaterias();
 };
 
 #endif

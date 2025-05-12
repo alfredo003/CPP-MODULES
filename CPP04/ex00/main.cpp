@@ -22,6 +22,10 @@ int main()
 
 		std::cout << "\033[31m ----------------------- \033[0m " << std::endl;
 		meta->makeSound();
+		
+		delete(meta);
+		delete(i);
+		delete(j);
 	}
 
 	std::cout << "[\033[31m TEST ADDITIONAL \033[0m] " << std::endl;
@@ -30,6 +34,8 @@ int main()
 		const WrongAnimal* cat = new WrongCat();
 		std::cout << cat->getType() << " " << std::endl;
 		cat->makeSound();
+		delete(animal);
+		delete(cat);
 	}
 
 	return 0;

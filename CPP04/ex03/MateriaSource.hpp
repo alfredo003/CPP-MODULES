@@ -9,7 +9,7 @@ class MateriaSource : public IMateriaSource{
 
 	protected: 
 		AMateria *materias[4];
-		int _nbrMateria;
+		int num_materia;
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource &copy);
@@ -18,7 +18,7 @@ class MateriaSource : public IMateriaSource{
 		MateriaSource &operator=(const MateriaSource &copy);
 		void learnMateria(AMateria*);
 		AMateria* createMateria(std::string const & type);
-		void print();
+
 };
 
 #endif
